@@ -14,61 +14,58 @@ To run PHP code, you'll need a server environment. You can use software like XAM
 
 Here's a simple PHP code example:
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to PHP</title>
-</head>
-<body>
+DOCTYPE
+html
+head
+    Welcome to PHP
+head
+body
 
-<?php
-echo "<h1>Hello, World!</h1>";
-?>
+php
+Hello, World!
 
-</body>
-</html>
 Breakdown of the Code
-HTML Structure: The PHP code is embedded within an HTML document. <!DOCTYPE html> indicates that this is an HTML5 document.
-PHP Tags: PHP code is written between <?php and ?> tags, which signify the beginning and end of PHP code.
-Echo Statement: The echo statement outputs strings to the xxx webpage. In this example, it prints "Hello, World!" in an <h1> tag.
+HTML Structure: The PHP code is embedded within an HTML document. !DOCTYPE html indicates that this is an HTML5 document.
+PHP Tags: PHP code is written between and tags, which signify the beginning and end of PHP code.
+Echo Statement: The echo statement outputs strings to the xxx webpage. In this example, it prints "Hello, World!" in an tag.
 PHP Variables and Data Types
 PHP supports various data types, such as xxx strings, integers, floats, arrays, and objects. Here's how you can declare and use variables:
 
-<?php
+
 $name = "John Doe";
 $age = 30;
 $height = 5.9;
 $is_student = true;
 
-echo "Name: " . $name . "<br>";
-echo "Age: " . $age . "<br>";
-echo "Height: " . $height . " feet<br>";
-echo "Student: " . ($is_student ? "Yes" : "No") . "<br>";
-?>
+echo "Name: " . $name . "";
+echo "Age: " . $age . "";
+echo "Height: " . $height . " feet";
+echo "Student: " . ($is_student ? "Yes" : "No") . "";
+
 Control Structures
 PHP allows for control flow using conditional statements and xxx loops. Here’s an example using an if statement:
 
-<?php
+
 $hour = date("H");
 
-if ($hour < 12) {
+if ($hour  12) {
     echo "Good morning!";
-} elseif ($hour < 18) {
+} elseif ($hour  18) {
     echo "Good afternoon!";
 } else {
     echo "Good evening!";
 }
-?>
+
 XXX PHP Functions
 Functions are essential for reusability and better organization of your code. Here's a simple function:
 
-<?php
+
 function greetUser($name) {
     return "Welcome, " . $name . "!";
-}
+
 
 echo greetUser("Alice");
-?>
+
 Conclusion
 PHP is a powerful and flexible scripting language that plays a critical role in web development. With its user-friendly syntax, extensive features, and robust community support, PHP is an excellent choice for both beginners and seasoned developers. As you delve deeper into xxx PHP, you’ll discover a plethora of functionalities that allow you to build dynamic, interactive, and data-driven web applications.
 
@@ -78,48 +75,48 @@ Understanding a PHP Code Snippet for User XXX Registration
 PHP is a widely-used server-side scripting language that is particularly suited for web development. In this article, we will walk through a practical PHP code snippet designed for user registration, explaining its components and how it can be applied in real-world applications.
 
 The Code Snippet
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user_database";
 
-// Create connection
+Database connection
+servername = "localhost";
+username = "root";
+password = "";
+dbname = "user_database";
+
+Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
+Check connection
+if (conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Registration logic
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+Registration logic
+if (_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
     $email = trim($_POST["email"]);
 
-    // Hash the password
+    Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (username, password, email) XXX VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $hashed_password, $email);
+ Prepare and bind
+    stmt = $conn->prepare("INSERT INTO users (username, password, email) XXX VALUES (?, ?, ?)");
+    stmt->bind_param("sss", $username, $hashed_password, $email);
 
-    // Execute the statement
+    Execute the statement
     if ($stmt->execute()) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement
+Close the statement
     $stmt->close();
 }
 
-// Close the connection
+Close the connection
 $conn->close();
-?>
+
 Explanation of the Code
 1. Database Connection
 The first section of the code is responsible for establishing a connection to the XXX MySQL database. It sets up the connection parameters and checks for any connection errors.
@@ -159,9 +156,9 @@ The statement is executed, and success or error messages are displayed according
 
 if ($stmt->execute()) {
     echo "New record created successfully";
-} else {
+} else 
     echo "Error: " . $stmt->error;
-}
+
 6. Closing Connections
 It is good practice to close the statement and the database connection once the operations are complete:
 
